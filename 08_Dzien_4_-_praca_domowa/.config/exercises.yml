@@ -1,0 +1,3 @@
+exercises:
+    '1_Flask math': { max_points: 0, disabled: true, translations: { en: '1_Flask math', pl: '1_Flask math' } }
+    '2_Flask postcode': { max_points: 0, disabled: true, translations: { en: '2_Flask 10-digit ISBN', pl: '2_Flask postcode' } }

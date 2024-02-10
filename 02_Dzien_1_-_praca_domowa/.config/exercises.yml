@@ -1,0 +1,10 @@
+exercises:
+    0_PEP-8: { max_points: 0, disabled: true, translations: { en: 0_PEP-8, pl: 0_PEP-8 } }
+    '1_Multiline String': { max_points: 0, disabled: true, translations: { en: '1_Multiline String', pl: '1_Multiline String' } }
+    '2_Square area': { max_points: 0, disabled: true, translations: { en: '2_Square area', pl: '2_Square area' } }
+    '3_Circle circuit': { max_points: 0, disabled: true, translations: { en: '3_Circle circuit', pl: '3_Circle circuit' } }
+    '4_Dogs age': { max_points: 0, disabled: true, translations: { en: '4_Dogs age', pl: '4_Dogs age' } }
+    5_Chessboard: { max_points: 0, disabled: true, translations: { en: 5_Chessboard, pl: 5_Chessboard } }
+    '6_Is divided by 4': { max_points: 0, disabled: true, translations: { en: '6_Is divided by 4', pl: '6_Is divided by 4' } }
+    7_Histogram: { max_points: 0, disabled: true, translations: { en: 7_Histogram, pl: 7_Histogram } }
+    8_Fibonacci: { max_points: 0, disabled: true, translations: { en: 8_Fibonacci, pl: 8_Fibonacci } }

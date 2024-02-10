@@ -1,0 +1,7 @@
+exercises:
+    '1_Make tuple': { max_points: 0, disabled: true, translations: { en: '1_Make tuple', pl: '1_Make tuple' } }
+    '2_Find first and last': { max_points: 0, disabled: true, translations: { en: '2_Find first and last', pl: '2_Find first and last' } }
+    '3_Format date': { max_points: 0, disabled: true, translations: { en: '3_Format date', pl: '3_Format date' } }
+    '4_Find boundaries': { max_points: 0, disabled: true, translations: { en: '4_Find boundaries', pl: '4_Find boundaries' } }
+    5_Censor: { max_points: 0, disabled: true, translations: { en: 5_Censor, pl: 5_Censor } }
+    '6_Check palindrome': { max_points: 0, disabled: true, translations: { en: '6_Check palindrome', pl: '6_Check palindrome' } }

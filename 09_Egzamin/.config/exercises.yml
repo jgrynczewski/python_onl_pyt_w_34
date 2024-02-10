@@ -1,0 +1,2 @@
+exercises:
+    1_egzamin: { max_points: 20, disabled: false, translations: { en: 1_Exam, pl: 1_egzamin } }

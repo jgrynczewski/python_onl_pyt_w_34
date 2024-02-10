@@ -1,0 +1,3 @@
+exercises:
+    '1_Zadanie 1': { max_points: 0, disabled: true, translations: { en: '1_Exercise 1', pl: '1_Zadanie 1' } }
+    '2_Zadanie 2': { max_points: 0, disabled: true, translations: { en: '2_Exercise 2', pl: '2_Zadanie 2' } }

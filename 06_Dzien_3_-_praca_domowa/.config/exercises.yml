@@ -1,0 +1,4 @@
+exercises:
+    '1_Random average': { max_points: 0, disabled: true, translations: { en: '1_Random average', pl: '1_Random average' } }
+    2_Div: { max_points: 0, disabled: true, translations: { en: 2_Div, pl: 2_Div } }
+    3_Pesel: { max_points: 0, disabled: true, translations: { en: '3_13-digit ISBN', pl: 3_Pesel } }
