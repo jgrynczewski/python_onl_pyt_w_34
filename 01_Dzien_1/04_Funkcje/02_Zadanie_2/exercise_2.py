@@ -1,4 +1,8 @@
 # write the function from exercise 2 here
+def multiply(subject, times):
+    result = subject * times
+    return result
+
 
 # the lines below will test your function:
 print("100 * 100 =", multiply(100, 100))  # 10000
