@@ -38,5 +38,10 @@ def name_view(name):
     return f"{name}"
 
 
+@app.route('/licz/<int:num1>/<int:num2>/')
+def add_view(num1, num2):
+    return f"{num1 + num2}"
+
+
 if __name__ == "__main__":
     app.run(debug=True)
