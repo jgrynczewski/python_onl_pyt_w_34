@@ -1,6 +1,6 @@
 import random
 from datetime import datetime
-from flask import Flask
+from flask import Flask, request
 
 
 app = Flask(__name__)
@@ -66,6 +66,52 @@ def lotek():
     random.shuffle(list_)
     result = list_[:6]
     return result
+
+
+# html intro
+@app.route('/welcome/')
+def html_view():
+    response = """
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <h1>Welcome!</h1>    
+        </body>
+    </html>
+    """
+
+    return response
+
+
+@app.route("/form/")
+def form_view():
+    data = request.args
+    name = data.get("name")
+    if name:
+        return f"Witaj {name}!"
+    else:
+        FORM = """
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Title</title>
+            </head>
+            <body>
+                <h3>Podaj swoje imię</h3>
+                <form>
+                    <input type="text" name="name" placehloder="name">
+                    <input type="submit" value="Prześlij">
+                </form>                
+            </body>
+        </html>    
+        """
+
+        return FORM
 
 
 if __name__ == "__main__":
