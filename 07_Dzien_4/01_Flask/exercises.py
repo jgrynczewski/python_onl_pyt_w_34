@@ -87,6 +87,7 @@ def html_view():
     return response
 
 
+# Zad 7
 @app.route("/form/")
 def form_view():
     data = request.args
