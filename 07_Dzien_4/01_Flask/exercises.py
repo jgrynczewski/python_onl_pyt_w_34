@@ -1,3 +1,4 @@
+import random
 from datetime import datetime
 from flask import Flask
 
@@ -41,6 +42,14 @@ def name_view(name):
 @app.route('/licz/<int:num1>/<int:num2>/')
 def add_view(num1, num2):
     return f"{num1 + num2}"
+
+
+@app.route("/losuj/")
+def draw():
+    # # one-liner
+    # return " ".join([str(item) for item in random.choices(range(10), k=3)])
+    nums = random.choices([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], k=3)
+    return f"{nums[0]} {nums[1]} {nums[2]}"
 
 
 if __name__ == "__main__":
