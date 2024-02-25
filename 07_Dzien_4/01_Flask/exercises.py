@@ -23,5 +23,20 @@ def date_view():
     return now.strftime("%d %b %Y")
 
 
+@app.route("/<string:name>/")
+def intro_view(name):
+    return f"Witaj {name.title()}!"
+
+
+@app.route('/')
+def home():
+    return "Witaj, użytkowniku!"
+
+
+@app.route('/hello/<string:name>/')
+def name_view(name):
+    return f"{name}"
+
+
 if __name__ == "__main__":
     app.run(debug=True)
