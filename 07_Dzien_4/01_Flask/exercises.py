@@ -185,5 +185,41 @@ def calc_view():
     return FORM
 
 
+# Zad 9
+@app.route('/guess/')
+def guess_view():
+
+    data = request.args
+    num = data.get('num')
+    draw_param = data.get('draw')
+
+    if not draw_param:
+        draw = random.randint(1, 10)
+    else:
+        draw = int(draw_param)
+
+    FORM = f"""
+        <form>
+            <input type=number name=num min=1 max=10 step=1>
+            <input type=hidden name=draw value={draw}>
+            <input type=submit value=Strzał>
+        </form>
+    """
+
+    if num:
+        num = int(num)
+        if num > draw:
+            CONTENT = "<h3>za dużo!</h3>" + FORM
+        elif num < draw:
+            CONTENT = "<h3>za mało!</h3>" + FORM
+        else:
+            CONTENT = "Gratulacje, udało Ci się!"
+
+        return CONTENT
+
+    CONTENT = "<h3>Spróbuj zgadnąć liczbę z przedziału 1-10</h3>" + FORM
+    return CONTENT
+
+
 if __name__ == "__main__":
     app.run(debug=True)
