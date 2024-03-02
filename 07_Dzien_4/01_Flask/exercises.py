@@ -26,10 +26,10 @@ def date_view():
     return now.strftime("%d %b %Y")
 
 
-# Intro
-@app.route("/<string:name>/")
-def intro_view(name):
-    return f"Witaj {name.title()}!"
+# # Intro
+# @app.route("/<string:name>/")
+# def intro_view(name):
+#     return f"Witaj {name.title()}!"
 
 
 # Zad 1
@@ -90,29 +90,59 @@ def html_view():
 # Zad 7
 @app.route("/form/")
 def form_view():
-    data = request.args
+
+    data = request.args  # parametry metody GET
     name = data.get("name")
     if name:
         return f"Witaj {name}!"
-    else:
-        FORM = """
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <title>Title</title>
-            </head>
-            <body>
-                <h3>Podaj swoje imię</h3>
-                <form>
-                    <input type="text" name="name" placehloder="name">
-                    <input type="submit" value="Prześlij">
-                </form>                
-            </body>
-        </html>    
-        """
 
-        return FORM
+    FORM = """
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <h3>Podaj swoje imię</h3>
+            <form>
+                <input type="text" name="name" placehloder="name">
+                <input type="submit" value="Prześlij">
+            </form>                
+        </body>
+    </html>
+    """
+
+    return FORM
+
+
+# Zad 7b - a co jeżeli to samo chcielibyśmy zrobić metodą POST ?
+@app.route("/form2/", methods=["GET", "POST"])
+def form_view2():
+
+    data = request.form  # parametry metody POST
+    name = data.get("name")
+    if name:
+        return f"Witaj {name}!"
+
+    FORM = """
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <h3>Podaj swoje imię</h3>
+            <form method=POST>
+                <input type="text" name="name" placehloder="name">
+                <input type="submit" value="Prześlij">
+            </form>                
+        </body>
+    </html>
+    """
+
+    return FORM
 
 
 if __name__ == "__main__":
