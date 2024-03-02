@@ -145,5 +145,45 @@ def form_view2():
     return FORM
 
 
+# Zad 8
+@app.route('/calc/')
+def calc_view():
+
+    data = request.args
+    operand1 = data.get('operand1')
+    operator = data.get('operator')
+    operand2 = data.get('operand2')
+
+    if operand1 and operator and operand2:
+        operand1 = int(operand1)
+        operand2 = int(operand2)
+        if operator == "+":
+            result = operand1 + operand2
+        elif operator == "-":
+            result = operand1 - operand2
+        elif operator == "*":
+            result = operand1 * operand2
+        else:
+            result = operand1 / operand2
+
+        return str(result)
+
+    FORM = """
+    <form>
+        <input type=number name=operand1>
+        <select name=operator>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type=number name=operand2>
+        <input type=submit value=Oblicz>
+    </form>
+    """
+
+    return FORM
+
+
 if __name__ == "__main__":
     app.run(debug=True)
