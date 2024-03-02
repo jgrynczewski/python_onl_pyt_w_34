@@ -26,10 +26,10 @@ def date_view():
     return now.strftime("%d %b %Y")
 
 
-# # Intro
-# @app.route("/<string:name>/")
-# def intro_view(name):
-#     return f"Witaj {name.title()}!"
+# Intro
+@app.route("/<string:name>/")
+def intro_view(name):
+    return f"Witaj {name.title()}!"
 
 
 # Zad 1
@@ -219,6 +219,14 @@ def guess_view():
 
     CONTENT = "<h3>Spróbuj zgadnąć liczbę z przedziału 1-10</h3>" + FORM
     return CONTENT
+
+
+@app.route('/zad10/', methods=["GET", "POST"])
+def method_view():
+    if request.method == "GET":
+        return "Wysłałeś GET"
+    elif request.method == "POST":
+        return "Wysłałeś POST"
 
 
 if __name__ == "__main__":
