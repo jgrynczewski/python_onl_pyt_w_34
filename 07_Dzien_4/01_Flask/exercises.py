@@ -106,7 +106,7 @@ def form_view():
         <body>
             <h3>Podaj swoje imię</h3>
             <form>
-                <input type="text" name="name" placehloder="name">
+                <input type="text" name="name" placeholder="name">
                 <input type="submit" value="Prześlij">
             </form>                
         </body>
@@ -135,9 +135,9 @@ def form_view2():
         <body>
             <h3>Podaj swoje imię</h3>
             <form method=POST>
-                <input type="text" name="name" placehloder="name">
+                <input type="text" name="name" placeholder="name">
                 <input type="submit" value="Prześlij">
-            </form>                
+            </form>
         </body>
     </html>
     """
@@ -221,12 +221,44 @@ def guess_view():
     return CONTENT
 
 
+# Zad 10
 @app.route('/zad10/', methods=["GET", "POST"])
 def method_view():
     if request.method == "GET":
         return "Wysłałeś GET"
     elif request.method == "POST":
         return "Wysłałeś POST"
+
+
+# Zad 11
+@app.route("/zad11/", methods=["GET", "POST"])
+def zad11_view():
+
+    data = request.form  # parametry metody POST
+    first_name = data.get("first_name")
+    last_name = data.get("last_name")
+    if first_name and last_name:
+        return f"Witaj {first_name} {last_name}"
+
+    FORM = """
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <h3>Podaj swoje imię</h3>
+            <form method=POST>
+                <input type="text" name="first_name" placeholder="first name">
+                <input type="text" name="last_name" placeholder="last name">
+                <input type="submit" value="Wyślij">
+            </form>                
+        </body>
+    </html>
+    """
+
+    return FORM
 
 
 if __name__ == "__main__":
